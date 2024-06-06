@@ -27,6 +27,7 @@ function ChakraToast() {
   ];
   // ToastStatus[]
   const statuses: TToastStatus[] = ["success", "error", "warning", "info"];
+
   return (
     <Stack gap={4}>
       <Heading size="md">Chakra-UI Toasts</Heading>
@@ -40,10 +41,10 @@ function ChakraToast() {
                 // colorScheme={Math.random() > 0.5 ? "green" : "red"}
                 onClick={() =>
                   toast({
+                    status: "error",
                     title: `${position} toast`,
                     position: position as ToastPosition,
                     isClosable: true,
-                    status: "error",
                   })
                 }
               >
@@ -73,6 +74,13 @@ function ChakraToast() {
           ))}
         </Wrap>
       </Stack>
+      <Button
+        colorScheme="primary"
+        w={"fit-content"}
+        onClick={() => toast.closeAll()}
+      >
+        Clos All Toasts
+      </Button>
     </Stack>
   );
 }
