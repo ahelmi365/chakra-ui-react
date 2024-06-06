@@ -13,16 +13,21 @@ import {
   InputLeftElement,
   InputRightAddon,
   InputRightElement,
+  Radio,
+  RadioGroup,
+  Select,
   Stack,
   StackDivider,
   VStack,
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
+import { useState } from "react";
 
 const ChakraForm = () => {
+  const [value, setValue] = useState("1");
   console.log("Form");
   return (
-    <Stack spacing={4}>
+    <Stack gap={4}>
       <Heading size="md">Chakra-UI Forms</Heading>
 
       <Stack
@@ -30,47 +35,76 @@ const ChakraForm = () => {
         gap={"2rem"}
         divider={<StackDivider />}
       >
-        <Box flex={1}>
-          <Heading fontSize={"large"} mb={"1rem"}>
-            Basic Inputs
-          </Heading>
-          <Stack spacing={3}>
-            <Input placeholder="Add Text" />
+        <Stack flex={1} gap={8}>
+          <Box>
+            <Heading size={"s"} mb={"1rem"}>
+              Basic Inputs
+            </Heading>
+            <Stack spacing={3}>
+              <Input placeholder="Add Text" />
 
-            <InputGroup>
-              <InputLeftAddon>+02</InputLeftAddon>
-              <Input type="tel" placeholder="phone number" />
-            </InputGroup>
+              <InputGroup>
+                <InputLeftAddon>+02</InputLeftAddon>
+                <Input type="tel" placeholder="phone number" />
+              </InputGroup>
 
-            {/* If you add the size prop to `InputGroup`, it'll pass it to all its children. */}
-            <InputGroup size="sm">
-              <InputLeftAddon>https://</InputLeftAddon>
-              <Input placeholder="mysite" />
-              <InputRightAddon>.com</InputRightAddon>
-            </InputGroup>
+              {/* If you add the size prop to `InputGroup`, it'll pass it to all its children. */}
+              <InputGroup size="sm">
+                <InputLeftAddon>https://</InputLeftAddon>
+                <Input placeholder="mysite" />
+                <InputRightAddon>.com</InputRightAddon>
+              </InputGroup>
 
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <PhoneIcon color="gray.300" />
-              </InputLeftElement>
-              <Input type="tel" placeholder="Phone number" />
-            </InputGroup>
+              <InputGroup>
+                <InputLeftElement pointerEvents="none">
+                  <PhoneIcon color="gray.300" />
+                </InputLeftElement>
+                <Input type="tel" placeholder="Phone number" />
+              </InputGroup>
 
-            <InputGroup>
-              <InputLeftElement
-                pointerEvents="none"
-                color="gray.300"
-                fontSize="1.2em"
-              >
-                $
-              </InputLeftElement>
-              <Input placeholder="Enter amount" />
-              <InputRightElement>
-                <CheckIcon color="green.500" />
-              </InputRightElement>
-            </InputGroup>
-          </Stack>
-        </Box>
+              <InputGroup>
+                <InputLeftElement
+                  pointerEvents="none"
+                  color="gray.300"
+                  fontSize="1.2em"
+                >
+                  $
+                </InputLeftElement>
+                <Input placeholder="Enter amount" />
+                <InputRightElement>
+                  <CheckIcon color="green.500" />
+                </InputRightElement>
+              </InputGroup>
+            </Stack>
+          </Box>
+          <Box>
+            <Heading size={"s"} mb={"1rem"}>
+              Radio
+            </Heading>
+            <RadioGroup onChange={setValue} value={value}>
+              <Stack direction="row">
+                <Radio value="1">First</Radio>
+                <Radio value="2">Second</Radio>
+                <Radio value="3">Third</Radio>
+              </Stack>
+            </RadioGroup>
+          </Box>
+          <Box>
+            <Heading size={"s"} mb={"1rem"}>
+              Select and CheckBox{" "}
+            </Heading>
+            <Select placeholder="Select option">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </Select>
+
+            <Stack spacing={1} direction="column" mt={4}>
+              <Checkbox defaultChecked>Checkbox-1</Checkbox>
+              <Checkbox defaultChecked>Checkbox-2</Checkbox>
+            </Stack>
+          </Box>
+        </Stack>
 
         <Box flex={1}>
           <Heading fontSize={"large"} mb={"1rem"}>
@@ -84,7 +118,7 @@ const ChakraForm = () => {
                 rememberMe: false,
               }}
               onSubmit={(values) => {
-                alert(JSON.stringify(values, null, 2));
+                alert(JSON.stringify(values, null, 4));
               }}
             >
               {({ handleSubmit, errors, touched }) => (
@@ -97,7 +131,7 @@ const ChakraForm = () => {
                         id="email"
                         name="email"
                         type="email"
-                        variant="filled"
+                        variant="outline"
                       />
                     </FormControl>
                     <FormControl
@@ -109,7 +143,7 @@ const ChakraForm = () => {
                         id="password"
                         name="password"
                         type="password"
-                        variant="filled"
+                        variant="outline"
                         validate={(value: string) => {
                           let error;
 
@@ -134,7 +168,11 @@ const ChakraForm = () => {
                     >
                       Remember me?
                     </Field>
-                    <Button type="submit" colorScheme="primary" width="full">
+                    <Button
+                      type="submit"
+                      colorScheme="primary"
+                      width="fit-content"
+                    >
                       Login
                     </Button>
                   </VStack>
