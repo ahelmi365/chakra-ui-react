@@ -15,7 +15,7 @@ const Buttons = () => {
   console.log("buttons");
   return (
     // <Flex direction={"column"} gap={"1rem"}>
-    <Stack spacing={4}>
+    <Stack gap={4}>
       <Heading size="md"> Chakra-UI Buttons</Heading>
 
       <Stack divider={<StackDivider />} spacing="4">

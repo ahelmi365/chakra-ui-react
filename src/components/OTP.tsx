@@ -8,10 +8,10 @@ import {
 
 const OTP = () => {
   console.log("OTP");
+  //  fontSize={24} w={16} h={16}
   return (
-    <Stack spacing={4}>
+    <Stack gap={4}>
       <Heading size="md">Chakra-UI OTP</Heading>
-
       <HStack>
         <PinInput size="lg" placeholder="-">
           <PinInputField />

@@ -2,7 +2,7 @@ import { Button, HStack, Heading, Stack, Tooltip } from "@chakra-ui/react";
 const ChakraTooltip = () => {
   console.log("ToolTip");
   return (
-    <Stack spacing={4}>
+    <Stack gap={4}>
       <Heading size="md">Chakra-UI ToolTip</Heading>
 
       <Stack spacing={10}>
