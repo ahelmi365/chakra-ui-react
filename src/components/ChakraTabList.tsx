@@ -29,6 +29,9 @@ import OTP from "./OTP";
 import ResponsiveStyle from "./ResponsiveStyle";
 import Stacks from "./Stacks";
 import ChakraToast from "./Toast";
+import ChakraBreadcrumb from "./ChakraBreadcrumb";
+import ChakraAccordion from "./ChakraAccordion";
+import ChakraDrawer from "./ChakraDrawer";
 
 const tabsData = [
   {
@@ -52,7 +55,11 @@ const tabsData = [
     content: <ChakraModal />,
   },
   {
-    label: "ToolTip",
+    label: "Drawer",
+    content: <ChakraDrawer />,
+  },
+  {
+    label: "Tooltip",
     content: <ChakraTooltip />,
   },
   {
@@ -68,10 +75,14 @@ const tabsData = [
       </Stack>
     ),
   },
-  // {
-  //   label: "BreadCrumb",
-  //   content: <ChakraBreadcrumb />,
-  // },
+  {
+    label: "Breadcrumb",
+    content: <ChakraBreadcrumb />,
+  },
+  {
+    label: "Accordion",
+    content: <ChakraAccordion />,
+  },
   {
     label: "Stacks",
     content: <Stacks />,
