@@ -18,6 +18,7 @@ const steps = [
   { title: "First", description: "Contact Info" },
   { title: "Second", description: "Date & Time" },
   { title: "Third", description: "Select Rooms" },
+  { title: "Fourth", description: "Check Out" },
 ];
 const ChakraHStepper = () => {
   const { activeStep, setActiveStep } = useSteps({
@@ -26,7 +27,7 @@ const ChakraHStepper = () => {
   });
 
   return (
-    <Stack>
+    <Stack gap={4}>
       <Heading size="md">Horizontal Stepper</Heading>
       <Stepper index={activeStep} orientation="horizontal">
         {steps.map((step, index) => (
