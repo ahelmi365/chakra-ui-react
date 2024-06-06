@@ -20,7 +20,7 @@ const ChakraModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Stack gap={4}>
-      <Heading size="md">Chakra-UI Toasts</Heading>
+      <Heading size="md">Chakra-UI Modals</Heading>
 
       <HStack>
         <ChakraAlertDialog />
@@ -46,7 +46,7 @@ const ChakraModal = () => {
               <Button colorScheme="blue" mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button variant="ghost">Secondary Action</Button>
+              <Button colorScheme="gray">Secondary Action</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
