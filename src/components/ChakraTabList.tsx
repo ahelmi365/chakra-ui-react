@@ -68,6 +68,10 @@ const tabsData = [
       </Stack>
     ),
   },
+  // {
+  //   label: "BreadCrumb",
+  //   content: <ChakraBreadcrumb />,
+  // },
   {
     label: "Stacks",
     content: <Stacks />,
