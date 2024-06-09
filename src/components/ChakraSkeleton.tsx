@@ -1,6 +1,4 @@
 import {
-  Avatar,
-  AvatarBadge,
   HStack,
   Heading,
   SkeletonCircle,
@@ -10,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import profileImage from "../assets/images/ali.jpg";
+import ProfileAvatar from "./ProfileAvatar";
 
 const ChakraSkeleton = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,19 +25,12 @@ const ChakraSkeleton = () => {
         skeletonHeight={4}
         width={"fit-content"}
       >
-        <Heading size="md">Chakra-UI Skeleton</Heading>
+        <Heading size="md">Skeleton</Heading>
       </SkeletonText>
       <Stack gap={4}>
         <HStack gap={4}>
-          <SkeletonCircle size="3.5rem" isLoaded={isLoaded}>
-            <Avatar
-              name="Profile avatar"
-              src={profileImage}
-              size={"lg"}
-              border={"1px solid gray"}
-            >
-              <AvatarBadge boxSize="1em" bg="green.500" />
-            </Avatar>
+          <SkeletonCircle size="fit-content" isLoaded={isLoaded}>
+            <ProfileAvatar profileImage={profileImage} size={"lg"} />
           </SkeletonCircle>
           <SkeletonText noOfLines={1} skeletonHeight="2" isLoaded={isLoaded}>
             <Text>Ali Helmi</Text>
@@ -55,22 +47,15 @@ const ChakraSkeleton = () => {
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
             voluptates cum ipsum soluta recusandae, architecto natus enim
-            excepturi ratione qui dolore eveniet magni iste .
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+            excepturi ratione qui dolore eveniet magni iste. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Omnis voluptates cum ipsum
+            soluta recusandae, architecto natus enim excepturi ratione qui
+            dolore eveniet magni iste. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Omnis voluptates cum ipsum soluta recusandae,
+            architecto natus enim excepturi ratione qui dolore eveniet magni
+            iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
             voluptates cum ipsum soluta recusandae, architecto natus enim
-            excepturi ratione qui dolore eveniet magni iste .
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            voluptates cum ipsum soluta recusandae, architecto natus enim
-            excepturi ratione qui dolore eveniet magni iste .
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            voluptates cum ipsum soluta recusandae, architecto natus enim
-            excepturi ratione qui dolore eveniet magni iste .
+            excepturi ratione qui dolore eveniet magni iste.
           </Text>
         </SkeletonText>
       </Stack>

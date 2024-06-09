@@ -1,8 +1,17 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Button, HStack, Heading, Icon, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Heading,
+  Icon,
+  Tooltip,
+  useColorMode,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import profileImage from "../assets/images/ali.jpg";
 import ChakraLogo from "./ChakraLogo";
-
+import ProfileAvatar from "./ProfileAvatar";
 const TopNav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -15,11 +24,23 @@ const TopNav = () => {
     >
       <Icon as={ChakraLogo} />
 
-      <Heading size="md">Chakra-UI Components</Heading>
-      <HStack>
-        <Button aria-label="Add to friends" onClick={toggleColorMode}>
-          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button>
+      <Heading size="md">Components</Heading>
+      <HStack gap={4}>
+        <Tooltip
+          hasArrow
+          label={colorMode === "light" ? "Dark Mode" : "Light Mode"}
+          placement="bottom"
+        >
+          <Button aria-label="Change Color Mood" onClick={toggleColorMode}>
+            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Button>
+        </Tooltip>
+
+        <Tooltip hasArrow label="Ali Helmi" placement="bottom">
+          <Box>
+            <ProfileAvatar profileImage={profileImage} size={"sm"} />
+          </Box>
+        </Tooltip>
 
         <Link to="/">
           <Button colorScheme="primary">Go Home</Button>
