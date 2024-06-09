@@ -1,27 +1,20 @@
 import { Box } from "@chakra-ui/react";
 import "./App.css";
-import Header from "./components/Header";
-import Pricing from "./components/Pricing";
 
 import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
 import ChakraTabList from "./components/ChakraTabList";
+import Landing from "./components/Landing";
 
 function App() {
   return (
-    <Box className="app" px={"2rem"}>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Box>
-              <Header />
-              <Pricing />
-            </Box>
-          }
-        />
-
-        <Route path="/list" element={<ChakraTabList />} />
-      </Routes>
+    <Box className="app">
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/list" element={<ChakraTabList />} />
+        </Routes>
+      </Layout>
     </Box>
   );
 }
