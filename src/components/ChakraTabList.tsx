@@ -101,7 +101,7 @@ const tabsData = [
     isDisabled: true,
   },
   {
-    label: "Resposive Style",
+    label: "Resposive",
     content: <ResponsiveStyle />,
     isDisabled: true,
   },
@@ -109,15 +109,17 @@ const tabsData = [
 const ChakraTabList = () => {
   return (
     <Card boxShadow={"0px 20px 25px -5px rgba(0, 0, 0, 0.1)"}>
-      {/* <CardHeader>Some Chakra-UI Components</CardHeader> */}
+      {/* <CardHeader>Components</CardHeader> */}
       <CardBody>
         <Tabs variant="enclosed" isLazy maxWidth="100%">
           <TabList overflowX={["auto", "auto"]} overflowY={["hidden"]}>
-            {tabsData.map((tab, index) => (
-              <Tab key={index} isDisabled={tab.isDisabled}>
-                {tab.label}
-              </Tab>
-            ))}
+            {tabsData
+              .filter((tab) => !tab.isDisabled)
+              .map((tab, index) => (
+                <Tab key={index} isDisabled={tab.isDisabled}>
+                  {tab.label}
+                </Tab>
+              ))}
           </TabList>
 
           <TabPanels>
