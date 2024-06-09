@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Flex,
   Heading,
   IconButton,
   Stack,
@@ -69,7 +70,7 @@ const Buttons = () => {
           <Heading size="s" mb={"0.5rem"}>
             Button Sizes
           </Heading>
-          <Stack spacing={4} direction="row" align="center">
+          <Flex direction="row" align="center" gap={4} wrap={"wrap"}>
             <Button colorScheme="teal" size="xs">
               Button
             </Button>
@@ -82,13 +83,13 @@ const Buttons = () => {
             <Button colorScheme="teal" size="lg">
               Button
             </Button>
-          </Stack>
+          </Flex>
         </Box>
         <Box as="section">
           <Heading size="s" mb={"0.5rem"}>
             Button Variant
           </Heading>
-          <Stack direction="row" spacing={4} align="center">
+          <Flex direction="row" gap={4} align="center" wrap={"wrap"}>
             <Button colorScheme="red" variant="solid">
               Solid
             </Button>
@@ -101,14 +102,14 @@ const Buttons = () => {
             <Button colorScheme="red" variant="link">
               Link
             </Button>
-          </Stack>
+          </Flex>
         </Box>
         <Box as="section">
           <Heading size="s" mb={"0.5rem"}>
             Button with icon
           </Heading>
 
-          <Stack direction="row" spacing={4}>
+          <Flex direction="row" gap={4} wrap={"wrap"}>
             <Button leftIcon={<EmailIcon />} colorScheme="teal" variant="solid">
               Email
             </Button>
@@ -123,7 +124,7 @@ const Buttons = () => {
               <Button>Save</Button>
               <IconButton aria-label="Add to friends" icon={<AddIcon />} />
             </ButtonGroup>
-          </Stack>
+          </Flex>
         </Box>
       </Stack>
     </Stack>
