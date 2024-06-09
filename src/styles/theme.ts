@@ -1,6 +1,6 @@
 // 1. Import `extendTheme`
-import { baseTheme, extendTheme } from "@chakra-ui/react";
-
+import { StyleFunctionProps, baseTheme, extendTheme } from "@chakra-ui/react";
+// import { mode } from "@chakra-ui/theme-tools";
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
   colors: {
@@ -156,6 +156,14 @@ const theme = extendTheme({
   config: {
     initialColorMode: "dark",
     useSystemColorMode: true,
+  },
+  styles: {
+    global: (props: StyleFunctionProps) => ({
+      body: {
+        // bg: mode("gray.100", "gray.800")(props),
+        bg: props.colorMode === "light" ? "gray.100" : "gray.800",
+      },
+    }),
   },
 });
 
