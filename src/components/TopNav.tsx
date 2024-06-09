@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   HStack,
-  Heading,
   Icon,
   Tooltip,
   useColorMode,
@@ -22,9 +21,10 @@ const TopNav = () => {
       className="top-nav"
       boxShadow={"0px 5px 10px 5px rgba(0, 0, 0, 0.1)"}
     >
-      <Icon as={ChakraLogo} />
+      <Link to="/">
+        <Icon as={ChakraLogo} />
+      </Link>
 
-      <Heading size="md">Components</Heading>
       <HStack gap={4}>
         <Tooltip
           hasArrow
@@ -42,9 +42,11 @@ const TopNav = () => {
           </Box>
         </Tooltip>
 
-        <Link to="/">
-          <Button colorScheme="primary">Go Home</Button>
-        </Link>
+        {/* <Link to="/">
+          <Button colorScheme="primary" display={["none", "inline-flex"]}>
+            Go Home
+          </Button>
+        </Link> */}
       </HStack>
     </HStack>
   );
