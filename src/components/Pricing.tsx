@@ -42,7 +42,7 @@ const Pricing = () => {
               textAlign={"center"}
             >
               <Text fontSize={"24px"} fontWeight={"800"} color={textColor}>
-                All Chakra UI
+                All Chakra UI Features
               </Text>
               <Heading
                 as="h4"
@@ -69,8 +69,9 @@ const Pricing = () => {
             </Box>
             <Box className="right" p="60px" fontSize={"18px"} color={textColor}>
               <Text>
-                Chakra UI provides an amazing user experience and a low learning
-                curve, making it particularly beginner-friendly.
+                Chakra UI is a comprehensive library of accessible, reusable,
+                and composable React components that streamlines the development
+                of modern web applications and websites.
               </Text>
               <Box mt={"1rem"}>
                 {checkedItemText.map((item, index) => (

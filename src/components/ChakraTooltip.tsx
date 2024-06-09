@@ -3,7 +3,7 @@ const ChakraTooltip = () => {
   console.log("ToolTip");
   return (
     <Stack gap={4}>
-      <Heading size="md">Chakra-UI ToolTip</Heading>
+      <Heading size="md">ToolTip</Heading>
 
       <Stack spacing={10}>
         <HStack justifyContent={"space-around"} flexWrap={"wrap"}>

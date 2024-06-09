@@ -30,7 +30,7 @@ function ChakraToast() {
 
   return (
     <Stack gap={4}>
-      <Heading size="md">Chakra-UI Toasts</Heading>
+      <Heading size="md">Toasts</Heading>
 
       <Stack>
         <Heading size="sm">Positions</Heading>
