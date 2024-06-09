@@ -32,7 +32,7 @@ const ChakraHStepper = () => {
   return (
     <Stack gap={4}>
       <Heading size="md">Horizontal Stepper</Heading>
-      <Stepper index={activeStep} orientation="horizontal">
+      <Stepper index={activeStep} orientation="horizontal" overflow={"auto"}>
         {steps.map((step, index) => (
           <Step key={index} onClick={() => setActiveStep(index)}>
             <StepIndicator>
