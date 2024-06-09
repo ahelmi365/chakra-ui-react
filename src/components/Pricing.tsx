@@ -19,7 +19,7 @@ const checkedItemText = [
 ];
 
 const Pricing = () => {
-  const textColor = useColorModeValue("gray.900", "gray.400"); // Set text color based on color mode
+  const textColor = useColorModeValue("gray.900", "gray.700");
   const bgColor = useColorModeValue("purple.500", "purple.400");
 
   return (
