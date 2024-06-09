@@ -38,7 +38,7 @@ const Pricing = () => {
             <Box
               className="left"
               bg={"purple.50"}
-              p="60px"
+              p={["4", "16"]}
               textAlign={"center"}
             >
               <Text fontSize={"24px"} fontWeight={"800"} color={textColor}>
@@ -62,12 +62,22 @@ const Pricing = () => {
                 All Free To Use
               </Text>
               <Link to="/list">
-                <Button colorScheme={"purple"} size={"lg"} w="282px" mt="24px">
+                <Button
+                  colorScheme={"purple"}
+                  size={"lg"}
+                  w={["80%", "100%"]}
+                  mt="24px"
+                >
                   Get Started
                 </Button>
               </Link>
             </Box>
-            <Box className="right" p="60px" fontSize={"18px"} color={textColor}>
+            <Box
+              className="right"
+              p={["4", "16"]}
+              fontSize={"18px"}
+              color={textColor}
+            >
               <Text>
                 Chakra UI is a comprehensive library of accessible, reusable,
                 and composable React components that streamlines the development
