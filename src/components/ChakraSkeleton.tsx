@@ -39,7 +39,7 @@ const ChakraSkeleton = () => {
 
         <SkeletonText
           mt="2"
-          noOfLines={4}
+          noOfLines={5}
           spacing="4"
           skeletonHeight="2"
           isLoaded={isLoaded}
