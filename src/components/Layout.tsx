@@ -1,4 +1,4 @@
-import { Box, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, Stack, useColorModeValue } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import TopNav from "./TopNav";
 interface props {
@@ -19,10 +19,9 @@ const Layout = ({ children }: props) => {
       >
         <TopNav />
       </Box>
-
-      <Box className="main-container" m={4}>
+      <Container className="main-container" maxW={"container.xl"}>
         {children}
-      </Box>
+      </Container>
     </Stack>
   );
 };
