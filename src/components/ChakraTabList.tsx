@@ -1,27 +1,21 @@
 import {
   Box,
-  Button,
   Card,
   CardBody,
-  CardHeader,
-  HStack,
-  Heading,
-  Icon,
   Stack,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  useColorMode,
 } from "@chakra-ui/react";
 
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
 import Buttons from "./Buttons";
+import ChakraAccordion from "./ChakraAccordion";
+import ChakraBreadcrumb from "./ChakraBreadcrumb";
+import ChakraDrawer from "./ChakraDrawer";
 import ChakraForm from "./ChakraForm";
 import ChakraHStepper from "./ChakraHStepper";
-import ChakraLogo from "./ChakraLogo";
 import ChakraModal from "./ChakraModal";
 import ChakraTooltip from "./ChakraTooltip";
 import ChakraVStepper from "./ChakraVStepper";
@@ -29,38 +23,43 @@ import OTP from "./OTP";
 import ResponsiveStyle from "./ResponsiveStyle";
 import Stacks from "./Stacks";
 import ChakraToast from "./Toast";
-import ChakraBreadcrumb from "./ChakraBreadcrumb";
-import ChakraAccordion from "./ChakraAccordion";
-import ChakraDrawer from "./ChakraDrawer";
+import ChakraSkeleton from "./ChakraSkeleton";
 
 const tabsData = [
   {
     label: "Buttons",
     content: <Buttons />,
+    isDisabled: false,
   },
   {
     label: "Forms",
     content: <ChakraForm />,
+    isDisabled: false,
   },
   {
     label: "OTP",
     content: <OTP />,
+    isDisabled: false,
   },
   {
     label: "Toast",
     content: <ChakraToast />,
+    isDisabled: false,
   },
   {
     label: "Modals",
     content: <ChakraModal />,
+    isDisabled: false,
   },
   {
     label: "Drawer",
     content: <ChakraDrawer />,
+    isDisabled: false,
   },
   {
     label: "Tooltip",
     content: <ChakraTooltip />,
+    isDisabled: false,
   },
   {
     label: "Stepper",
@@ -74,52 +73,50 @@ const tabsData = [
         </Box>
       </Stack>
     ),
+    isDisabled: false,
   },
   {
     label: "Breadcrumb",
     content: <ChakraBreadcrumb />,
+    isDisabled: false,
+  },
+  {
+    label: "Skeleton",
+    content: <ChakraSkeleton />,
+    isDisabled: false,
   },
   {
     label: "Accordion",
     content: <ChakraAccordion />,
+    isDisabled: false,
+  },
+  {
+    label: "Grid",
+    content: <Stacks />,
+    isDisabled: true,
   },
   {
     label: "Stacks",
     content: <Stacks />,
+    isDisabled: true,
   },
   {
     label: "Resposive Style",
     content: <ResponsiveStyle />,
+    isDisabled: true,
   },
 ];
 const ChakraTabList = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Card mt="1rem">
-      <CardHeader>
-        <HStack justifyContent={"space-between"} gap={"2rem"}>
-          <Icon as={ChakraLogo} />
-
-          <Heading size="md">Some Chakra-UI Components</Heading>
-          <HStack>
-            <Button aria-label="Add to friends" onClick={toggleColorMode}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            </Button>
-
-            <Link to="/">
-              <Button colorScheme="primary">Go Home</Button>
-            </Link>
-          </HStack>
-        </HStack>
-      </CardHeader>
+    <Card boxShadow={"0px 20px 25px -5px rgba(0, 0, 0, 0.1)"}>
+      {/* <CardHeader>Some Chakra-UI Components</CardHeader> */}
       <CardBody>
         <Tabs variant="enclosed" isLazy maxWidth="100%">
-          <TabList
-          // overflowX={["scroll", "scroll", "hidden"]}
-          // overflowY={["hidden"]}
-          >
+          <TabList overflowX={["auto", "auto"]} overflowY={["hidden"]}>
             {tabsData.map((tab, index) => (
-              <Tab key={index}>{tab.label}</Tab>
+              <Tab key={index} isDisabled={tab.isDisabled}>
+                {tab.label}
+              </Tab>
             ))}
           </TabList>
 
