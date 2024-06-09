@@ -27,7 +27,7 @@ const ChakraDrawer = () => {
 
   return (
     <Stack gap={4}>
-      <Heading size={"md"}>Chakra-UI Drawer </Heading>
+      <Heading size={"md"}>Drawer </Heading>
       <Button
         leftIcon={<AddIcon />}
         colorScheme="primary"

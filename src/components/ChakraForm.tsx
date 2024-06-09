@@ -28,7 +28,7 @@ const ChakraForm = () => {
   console.log("Form");
   return (
     <Stack gap={4}>
-      <Heading size="md">Chakra-UI Forms</Heading>
+      <Heading size="md">Forms</Heading>
 
       <Stack
         direction={["column", "column", "row"]}

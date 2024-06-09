@@ -20,7 +20,7 @@ const ChakraModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Stack gap={4}>
-      <Heading size="md">Chakra-UI Modals</Heading>
+      <Heading size="md">Modals</Heading>
 
       <HStack>
         <ChakraAlertDialog />
