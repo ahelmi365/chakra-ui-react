@@ -13,6 +13,7 @@ import {
   Stepper,
   useSteps,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const steps = [
   { title: "First", description: "Contact Info" },
@@ -25,7 +26,9 @@ const ChakraHStepper = () => {
     index: 0,
     count: steps.length,
   });
-
+  useEffect(() => {
+    console.log("Stepper");
+  }, []);
   return (
     <Stack gap={4}>
       <Heading size="md">Horizontal Stepper</Heading>

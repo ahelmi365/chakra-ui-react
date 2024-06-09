@@ -1,7 +1,10 @@
 import { Box } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const ResponsiveStyle = () => {
-  console.log("Responsive Style");
+  useEffect(() => {
+    console.log("Responsive Style");
+  }, []);
   // base = 0em, sm = 30em, md = 48em, lg = 62em, xl = 80em,, 2xl = 96em
 
   // Here's how to interpret this syntax

@@ -7,9 +7,12 @@ import {
   StackDivider,
   Text,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const Stacks = () => {
-  console.log("Stacks");
+  useEffect(() => {
+    console.log("Stacks");
+  }, []);
   return (
     <div>
       <Box as="section" mt={5} mb={5}>

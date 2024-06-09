@@ -20,10 +20,13 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 const ChakraDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const firstField = useRef(null);
+  useEffect(() => {
+    console.log("Drawer");
+  }, []);
 
   return (
     <Stack gap={4}>

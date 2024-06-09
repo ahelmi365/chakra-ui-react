@@ -21,11 +21,14 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ChakraForm = () => {
   const [value, setValue] = useState("1");
-  console.log("Form");
+
+  useEffect(() => {
+    console.log("Form");
+  }, []);
   return (
     <Stack gap={4}>
       <Heading size="md">Forms</Heading>

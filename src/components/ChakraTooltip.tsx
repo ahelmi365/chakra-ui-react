@@ -1,6 +1,9 @@
 import { Button, HStack, Heading, Stack, Tooltip } from "@chakra-ui/react";
+import { useEffect } from "react";
 const ChakraTooltip = () => {
-  console.log("ToolTip");
+  useEffect(() => {
+    console.log("ToolTip");
+  }, []);
   return (
     <Stack gap={4}>
       <Heading size="md">ToolTip</Heading>

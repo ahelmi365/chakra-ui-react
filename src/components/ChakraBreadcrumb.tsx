@@ -6,9 +6,13 @@ import {
   Heading,
   Stack,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ChakraBreadcrumb = () => {
+  useEffect(() => {
+    console.log("Breadcrumb");
+  }, []);
   return (
     <Stack gap={4}>
       <Heading size={"md"}>Chakra Breadcrumb</Heading>

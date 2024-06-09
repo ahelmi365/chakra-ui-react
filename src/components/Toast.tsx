@@ -7,6 +7,7 @@ import {
   WrapItem,
   useToast,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 type TToastStatus =
   | "success"
   | "error"
@@ -15,7 +16,9 @@ type TToastStatus =
   | "loading"
   | undefined;
 function ChakraToast() {
-  console.log("Toast");
+  useEffect(() => {
+    console.log("Toast");
+  }, []);
   const toast = useToast();
   const positions = [
     "top-left",

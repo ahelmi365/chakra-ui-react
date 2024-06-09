@@ -10,9 +10,13 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const Buttons = () => {
-  console.log("buttons");
+  useEffect(() => {
+    console.log("buttons");
+  }, []);
+
   return (
     // <Flex direction={"column"} gap={"1rem"}>
     <Stack gap={4}>

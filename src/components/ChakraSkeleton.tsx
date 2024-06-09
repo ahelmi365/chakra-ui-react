@@ -13,6 +13,7 @@ import ProfileAvatar from "./ProfileAvatar";
 const ChakraSkeleton = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
+    console.log("Skeleton");
     setTimeout(() => {
       setIsLoaded(true);
     }, 2000);

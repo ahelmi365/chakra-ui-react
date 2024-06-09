@@ -14,9 +14,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import ChakraAlertDialog from "./AlertDialog";
+import { useEffect } from "react";
 
 const ChakraModal = () => {
-  console.log("Modal");
+  useEffect(() => {
+    console.log("Modal");
+  }, []);
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Stack gap={4}>

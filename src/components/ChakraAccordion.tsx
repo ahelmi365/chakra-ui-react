@@ -8,8 +8,12 @@ import {
   Heading,
   Stack,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const ChakraAccordion = () => {
+  useEffect(() => {
+    console.log("Accordion");
+  }, []);
   return (
     <Stack gap={4}>
       <Heading size={"md"}>Accordion</Heading>
