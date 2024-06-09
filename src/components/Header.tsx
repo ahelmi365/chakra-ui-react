@@ -13,10 +13,10 @@ const Header = () => {
       as="section"
     >
       <Heading fontWeight={"extrabold"} fontSize={["3xl", "3xl", "5xl"]}>
-        Chakra UI Adoption Guide
+        Chakra UI
       </Heading>
       <Text fontWeight="medium" fontSize={["lg", "lg", "2xl"]} pt="4">
-        Overview, examples, and alternatives{" "}
+        Build Accessible React Apps with Speed ⚡️
       </Text>
     </Box>
   );
