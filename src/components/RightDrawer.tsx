@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import profileImage from "../assets/images/ali.jpg";
 import ProfileAvatar from "./ProfileAvatar";
-import ProfileNavItem from "./ProfileNavItem";
+import DrawerNavItem from "./DrawerNavItem";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
@@ -56,7 +56,7 @@ const RightDrawer = ({ isOpen, onClose }: Props) => {
           <VStack alignItems={"start"} fontSize={"sm"} gap={0}>
             {profileNavItems.map((item) => (
               <Box onClick={onClose} w={"100%"}>
-                <ProfileNavItem navItemText={item.text} navigateTo={item.to} />
+                <DrawerNavItem navItemText={item.text} navigateTo={item.to} />
               </Box>
             ))}
           </VStack>
@@ -67,14 +67,14 @@ const RightDrawer = ({ isOpen, onClose }: Props) => {
           alignItems={"start"}
         >
           <Box onClick={onClose} w={"100%"}>
-            <ProfileNavItem
+            <DrawerNavItem
               navItemText={"Settings"}
               navigateTo={"/"}
               navItemIcon={SettingsIcon}
             />
           </Box>
           <Box onClick={onClose} w={"100%"}>
-            <ProfileNavItem
+            <DrawerNavItem
               navItemText={"Logout"}
               navigateTo={"/"}
               navItemIcon={ArrowLeftIcon}
