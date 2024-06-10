@@ -72,16 +72,16 @@ const Buttons = () => {
           </Heading>
           <Flex direction="row" align="center" gap={4} wrap={"wrap"}>
             <Button colorScheme="teal" size="xs">
-              Button
+              Button (xs)
             </Button>
             <Button colorScheme="teal" size="sm">
-              Button
+              Button (sm)
             </Button>
             <Button colorScheme="teal" size="md">
-              Button
+              Button (md)
             </Button>
             <Button colorScheme="teal" size="lg">
-              Button
+              Button (lg)
             </Button>
           </Flex>
         </Box>
