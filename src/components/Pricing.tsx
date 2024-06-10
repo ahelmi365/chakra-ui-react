@@ -38,7 +38,8 @@ const Pricing = () => {
             <Box
               className="left"
               bg={"purple.50"}
-              p={["4", "16"]}
+              px={["4", "32"]}
+              py={["4", "16"]}
               textAlign={"center"}
             >
               <Text fontSize={"24px"} fontWeight={"800"} color={textColor}>
@@ -54,8 +55,8 @@ const Pricing = () => {
                 $ 0.0
               </Heading>
               <Text
-                fontSize={"18px"}
-                fontWeight={"500"}
+                fontSize={"xl"}
+                fontWeight={"extrabold"}
                 mt="8px"
                 color={textColor}
               >
@@ -74,7 +75,7 @@ const Pricing = () => {
             </Box>
             <Box
               className="right"
-              p={["4", "16"]}
+              p={["4", "8"]}
               fontSize={"18px"}
               color={textColor}
             >
@@ -83,7 +84,7 @@ const Pricing = () => {
                 and composable React components that streamlines the development
                 of modern web applications and websites.
               </Text>
-              <Box mt={"1rem"}>
+              <Box mt={"1em"}>
                 {checkedItemText.map((item, index) => (
                   <CheckedItem
                     text={item}
