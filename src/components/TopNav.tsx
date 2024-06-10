@@ -31,9 +31,10 @@ const TopNav = () => {
       justifyContent={"space-between"}
       gap={"2rem"}
       py={2}
-      px={8}
+      px={[4, 8]}
       className="top-nav"
       boxShadow={"0px 5px 10px 5px rgba(0, 0, 0, 0.1)"}
+      overflow={"auto"}
     >
       <Tooltip hasArrow label="Show/Hide Menu" placement="bottom">
         <Button onClick={OnOpenLeftDrawer} cursor={"pointer"}>
