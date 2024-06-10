@@ -6,7 +6,7 @@ interface Props {
 }
 const CheckedItem = ({ text, color }: Props) => {
   return (
-    <HStack textAlign={["left", "left", "center"]}>
+    <HStack textAlign={["left", "left", "center"]} mt={".5rem"}>
       <CheckCircleIcon color={color} />
       <Text textAlign={"left"}>{text}</Text>
     </HStack>
