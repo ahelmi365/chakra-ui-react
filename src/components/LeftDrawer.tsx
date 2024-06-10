@@ -71,7 +71,7 @@ const LeftDrawer = ({ isOpen, onClose }: Props) => {
           </Box>
           <Box onClick={onClose} w={"100%"}>
             <DrawerNavItem
-              navItemText={"Logout"}
+              navItemText={"Sign out"}
               navigateTo={"/"}
               navItemIcon={ArrowLeftIcon}
             />
