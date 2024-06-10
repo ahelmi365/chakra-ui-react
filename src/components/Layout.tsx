@@ -19,7 +19,7 @@ const Layout = ({ children }: props) => {
       >
         <TopNav />
       </Box>
-      <Container className="main-container" maxW={"container.xl"} mt={4}>
+      <Container className="main-container" maxW={"container.xl"} mt={4} mb={4}>
         {children}
       </Container>
     </Stack>
