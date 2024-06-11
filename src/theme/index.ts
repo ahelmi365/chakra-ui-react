@@ -4,7 +4,7 @@ import {
   baseTheme,
   extendTheme,
   withDefaultColorScheme,
-  withDefaultVariant,
+  // withDefaultVariant,
 } from "@chakra-ui/react";
 // import { mode } from "@chakra-ui/theme-tools";
 // 2. Call `extendTheme` and pass your custom values
