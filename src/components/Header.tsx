@@ -6,7 +6,7 @@ const Header = () => {
     <Box
       color={"white"}
       bg={bgColor}
-      pt="20"
+      pt="10"
       pb="48"
       px="8"
       textAlign={["left", "left", "center"]}
