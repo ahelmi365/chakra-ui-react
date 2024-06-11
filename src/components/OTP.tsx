@@ -23,7 +23,7 @@ const OTP = () => {
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <Stack gap={4}>
-        <Heading size="md">Chakra-UI OTP</Heading>
+        <Heading size="md">OTP</Heading>
         <HStack>
           <PinInput
             size="lg"

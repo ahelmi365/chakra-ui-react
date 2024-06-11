@@ -6,7 +6,7 @@ const ChakraTooltip = () => {
   }, []);
   return (
     <Stack gap={4}>
-      <Heading size="md">ToolTip</Heading>
+      <Heading size="md">Tooltip</Heading>
 
       <Stack spacing={10}>
         <HStack justifyContent={"space-around"} flexWrap={"wrap"}>
