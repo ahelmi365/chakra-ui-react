@@ -5,7 +5,7 @@ interface props {
   children: ReactNode;
 }
 const Layout = ({ children }: props) => {
-  const bgColor = useColorModeValue("gray.50", "gray.800");
+  const bgColor = useColorModeValue("gray.50", "gray.700");
   return (
     <Stack className="Layout-container">
       <Box
