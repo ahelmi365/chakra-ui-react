@@ -50,8 +50,8 @@ const LeftDrawer = ({ isOpen, onClose }: Props) => {
 
         <DrawerBody mt={4}>
           <VStack alignItems={"start"} fontSize={"sm"} gap={0}>
-            {profileNavItems.map((item) => (
-              <Box onClick={onClose} w={"100%"}>
+            {profileNavItems.map((item, index) => (
+              <Box onClick={onClose} w={"100%"} key={index}>
                 <DrawerNavItem navItemText={item.text} navigateTo={item.to} />
               </Box>
             ))}
