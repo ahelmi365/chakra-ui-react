@@ -1,7 +1,7 @@
 import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 
 const Header = () => {
-  const bgColor = useColorModeValue("purple.500", "purple.400");
+  const bgColor = useColorModeValue("primary.500", "primary.400");
   return (
     <Box
       color={"white"}

@@ -96,7 +96,7 @@ const ChakraDrawer = () => {
             <Button variant="outline" mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme="blue">Submit</Button>
+            <Button colorScheme="primary">Submit</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

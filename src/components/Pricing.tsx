@@ -20,7 +20,7 @@ const checkedItemText = [
 
 const Pricing = () => {
   const textColor = useColorModeValue("gray.900", "gray.700");
-  const bgColor = useColorModeValue("purple.500", "purple.400");
+  const bgColor = useColorModeValue("primary.500", "primary.400");
 
   return (
     <LightMode>
@@ -37,7 +37,7 @@ const Pricing = () => {
           <Flex direction={["column", "column", "row"]}>
             <Box
               className="left"
-              bg={"purple.50"}
+              bg={"primary.50"}
               px={["4", "32"]}
               py={["4", "16"]}
               textAlign={"center"}
@@ -64,7 +64,7 @@ const Pricing = () => {
               </Text>
               <Link to="/list">
                 <Button
-                  colorScheme={"purple"}
+                  colorScheme={"primary"}
                   size={"lg"}
                   w={["80%", "100%"]}
                   mt="24px"

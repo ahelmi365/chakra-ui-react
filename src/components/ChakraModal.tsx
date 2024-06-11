@@ -46,7 +46,7 @@ const ChakraModal = () => {
             </ModalBody>
 
             <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
+              <Button colorScheme="primary" mr={3} onClick={onClose}>
                 Close
               </Button>
               <Button colorScheme="gray">Secondary Action</Button>
