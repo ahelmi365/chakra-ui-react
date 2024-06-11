@@ -14,6 +14,31 @@ import {
 import { useEffect } from "react";
 
 const Buttons = () => {
+  const defaultColors = [
+    "Gray",
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Teal",
+    "Blue",
+    "Cyan",
+    "Purple",
+    "Pink",
+  ];
+
+  const customColors = [
+    "Primary",
+    "Secondary",
+    "Success",
+    "Danger",
+    "Warning",
+    "Info",
+  ];
+
+  const buttonVariants = ["Solid", "Outline", "Ghost", "Link"];
+
+  const buttonSizes = ["xs", "sm", "md", "lg"];
   useEffect(() => {
     console.log("buttons");
   }, []);
@@ -30,37 +55,11 @@ const Buttons = () => {
           </Heading>
           <Stack justifyContent={"start"} alignItems={"start"}>
             <Wrap spacing={4}>
-              <WrapItem>
-                <Button colorScheme="gray">Gray</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="red">Red</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="orange">Orange</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="yellow">Yellow</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="green">Green</Button>
-              </WrapItem>
-
-              <WrapItem>
-                <Button colorScheme="teal">Teal</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="blue">Blue</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="cyan">Cyan</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="purple">Purple</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="pink">Pink</Button>
-              </WrapItem>
+              {defaultColors.map((color, index) => (
+                <WrapItem key={index}>
+                  <Button colorScheme={color.toLowerCase()}>{color}</Button>
+                </WrapItem>
+              ))}
             </Wrap>
           </Stack>
         </Box>
@@ -70,26 +69,11 @@ const Buttons = () => {
           </Heading>
           <Stack justifyContent={"start"} alignItems={"start"}>
             <Wrap spacing={4}>
-              <WrapItem>
-                <Button colorScheme="primary">Primary</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="secondary">Secondary</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="success">Success</Button>
-              </WrapItem>
-              <WrapItem>
-                <Button colorScheme="danger">Danger</Button>
-              </WrapItem>
-
-              <WrapItem>
-                <Button colorScheme="warning">Warning</Button>
-              </WrapItem>
-
-              <WrapItem>
-                <Button colorScheme="info">Info</Button>
-              </WrapItem>
+              {customColors.map((color, index) => (
+                <WrapItem key={index}>
+                  <Button colorScheme={color.toLowerCase()}>{color}</Button>
+                </WrapItem>
+              ))}
             </Wrap>
           </Stack>
         </Box>
@@ -98,18 +82,11 @@ const Buttons = () => {
             Button Sizes
           </Heading>
           <Flex direction="row" align="center" gap={4} wrap={"wrap"}>
-            <Button colorScheme="teal" size="xs">
-              Button (xs)
-            </Button>
-            <Button colorScheme="teal" size="sm">
-              Button (sm)
-            </Button>
-            <Button colorScheme="teal" size="md">
-              Button (md)
-            </Button>
-            <Button colorScheme="teal" size="lg">
-              Button (lg)
-            </Button>
+            {buttonSizes.map((size, index) => (
+              <Button colorScheme="teal" size={size} key={index}>
+                Button ({size})
+              </Button>
+            ))}
           </Flex>
         </Box>
         <Box as="section">
@@ -117,18 +94,15 @@ const Buttons = () => {
             Button Variant
           </Heading>
           <Flex direction="row" gap={4} align="center" wrap={"wrap"}>
-            <Button colorScheme="red" variant="solid">
-              Solid
-            </Button>
-            <Button colorScheme="red" variant="outline">
-              Outline
-            </Button>
-            <Button colorScheme="red" variant="ghost">
-              Ghost
-            </Button>
-            <Button colorScheme="red" variant="link">
-              Link
-            </Button>
+            {buttonVariants.map((variant, index) => (
+              <Button
+                colorScheme="red"
+                variant={variant.toLowerCase()}
+                key={index}
+              >
+                {variant}
+              </Button>
+            ))}
           </Flex>
         </Box>
         <Box as="section">
