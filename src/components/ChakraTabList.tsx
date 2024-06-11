@@ -116,7 +116,11 @@ const ChakraTabList = () => {
             {tabsData
               .filter((tab) => !tab.isDisabled)
               .map((tab, index) => (
-                <Tab key={index} isDisabled={tab.isDisabled}>
+                <Tab
+                  key={index}
+                  isDisabled={tab.isDisabled}
+                  fontWeight={"bold"}
+                >
                   {tab.label}
                 </Tab>
               ))}
