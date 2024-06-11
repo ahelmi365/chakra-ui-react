@@ -32,10 +32,14 @@ const OTP = () => {
             onChange={(value) => setOTP(value)}
             value={OTP}
           >
-            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
-            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
-            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
-            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
+            {[...Array(4)].map((_, index) => (
+              <PinInputField
+                key={index}
+                w={pinSize}
+                h={pinSize}
+                fontSize={pinFontSize}
+              />
+            ))}
           </PinInput>
         </HStack>
         <Button
