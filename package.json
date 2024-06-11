@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://github-ahelmi365.github.io/chakra-ui-react",
+  "homepage": "http://github-ahelmi365.github.io/chakra-ui-react/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
