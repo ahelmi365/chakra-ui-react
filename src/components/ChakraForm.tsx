@@ -52,7 +52,7 @@ const ChakraForm = () => {
               </InputGroup>
 
               {/* If you add the size prop to `InputGroup`, it'll pass it to all its children. */}
-              <InputGroup size="sm">
+              <InputGroup>
                 <InputLeftAddon>https://</InputLeftAddon>
                 <Input placeholder="mysite" />
                 <InputRightAddon>.com</InputRightAddon>
@@ -75,7 +75,7 @@ const ChakraForm = () => {
                 </InputLeftElement>
                 <Input placeholder="Enter amount" />
                 <InputRightElement>
-                  <CheckIcon color="green.500" />
+                  <CheckIcon color="primary.500" />
                 </InputRightElement>
               </InputGroup>
             </Stack>
