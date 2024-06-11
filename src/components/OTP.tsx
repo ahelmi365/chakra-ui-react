@@ -19,7 +19,8 @@ const OTP = () => {
   useEffect(() => {
     console.log("OTP");
   }, []);
-
+  const pinSize = 16;
+  const pinFontSize = 24;
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <Stack gap={4}>
@@ -31,10 +32,10 @@ const OTP = () => {
             onChange={(value) => setOTP(value)}
             value={OTP}
           >
-            <PinInputField fontSize={24} w={16} h={16} />
-            <PinInputField fontSize={24} w={16} h={16} />
-            <PinInputField fontSize={24} w={16} h={16} />
-            <PinInputField fontSize={24} w={16} h={16} />
+            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
+            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
+            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
+            <PinInputField fontSize={pinFontSize} w={pinSize} h={pinSize} />
           </PinInput>
         </HStack>
         <Button
