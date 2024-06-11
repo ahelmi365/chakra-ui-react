@@ -26,13 +26,10 @@ const Buttons = () => {
       <Stack divider={<StackDivider />} spacing="4">
         <Box>
           <Heading size="s" mb={"0.5rem"}>
-            Buttons with colorScheme
+            Buttons with colorScheme (Chakra Default Colors)
           </Heading>
           <Stack justifyContent={"start"} alignItems={"start"}>
             <Wrap spacing={4}>
-              <WrapItem>
-                <Button colorScheme="primary">Primary</Button>
-              </WrapItem>
               <WrapItem>
                 <Button colorScheme="gray">Gray</Button>
               </WrapItem>
@@ -48,6 +45,7 @@ const Buttons = () => {
               <WrapItem>
                 <Button colorScheme="green">Green</Button>
               </WrapItem>
+
               <WrapItem>
                 <Button colorScheme="teal">Teal</Button>
               </WrapItem>
@@ -62,6 +60,35 @@ const Buttons = () => {
               </WrapItem>
               <WrapItem>
                 <Button colorScheme="pink">Pink</Button>
+              </WrapItem>
+            </Wrap>
+          </Stack>
+        </Box>
+        <Box>
+          <Heading size="s" mb={"0.5rem"}>
+            Buttons with colorScheme (Cusomt Colors)
+          </Heading>
+          <Stack justifyContent={"start"} alignItems={"start"}>
+            <Wrap spacing={4}>
+              <WrapItem>
+                <Button colorScheme="primary">Primary</Button>
+              </WrapItem>
+              <WrapItem>
+                <Button colorScheme="secondary">Secondary</Button>
+              </WrapItem>
+              <WrapItem>
+                <Button colorScheme="success">Success</Button>
+              </WrapItem>
+              <WrapItem>
+                <Button colorScheme="danger">Danger</Button>
+              </WrapItem>
+
+              <WrapItem>
+                <Button colorScheme="warning">Warning</Button>
+              </WrapItem>
+
+              <WrapItem>
+                <Button colorScheme="info">Info</Button>
               </WrapItem>
             </Wrap>
           </Stack>
