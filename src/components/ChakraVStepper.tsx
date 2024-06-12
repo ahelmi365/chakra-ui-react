@@ -20,18 +20,12 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ChakraAlert from "./ChakraAlert";
-import { stepperContentData } from "../utils/constants";
+import { stepperContentData, stepperSteps } from "../utils/constants";
 
-const steps = [
-  { title: "First", description: "Contact Info" },
-  { title: "Second", description: "Date & Time" },
-  { title: "Third", description: "Select Rooms" },
-  { title: "Fourth", description: "Check Out" },
-];
 const ChakraVStepper = () => {
   const { activeStep, setActiveStep } = useSteps({
     index: 0,
-    count: steps.length,
+    count: stepperSteps.length,
   });
 
   const [progressValue, setProgressValue] = useState(0);
@@ -41,7 +35,7 @@ const ChakraVStepper = () => {
       <Heading size="md">Vertical Stepper</Heading>
       <HStack alignItems={"stretch"} spacing={16}>
         <Stepper index={activeStep} orientation="vertical" height={480} gap="0">
-          {steps.map((step, index) => (
+          {stepperSteps.map((step, index) => (
             <Step key={index} onClick={() => setActiveStep(index)}>
               <StepIndicator fontWeight={"bold"}>
                 <StepStatus
@@ -66,7 +60,7 @@ const ChakraVStepper = () => {
 
         <Box w={"80%"} h={"100%"} flex={1} alignSelf={"start"}>
           <ChakraAlert
-            status={activeStep === steps.length ? "success" : "info"}
+            status={activeStep === stepperSteps.length ? "success" : "info"}
           >
             <Stack>
               <Heading size={"md"}>
@@ -90,6 +84,7 @@ const ChakraVStepper = () => {
       {/* btns */}
       <Flex gap={4}>
         <Button
+          isDisabled={activeStep === 0}
           w={32}
           colorScheme="primary"
           variant={"outline"}
@@ -98,21 +93,23 @@ const ChakraVStepper = () => {
             console.log({ activeStep });
             if (activeStep > 0) {
               setActiveStep(activeStep - 1);
-              console.log((activeStep - 1) * (100 / steps.length));
-              setProgressValue((activeStep - 1) * (100 / steps.length));
+              console.log((activeStep - 1) * (100 / stepperSteps.length));
+              setProgressValue((activeStep - 1) * (100 / stepperSteps.length));
             }
           }}
         >
           Back
         </Button>
         <Button
+          isDisabled={activeStep === stepperSteps.length}
           w={32}
           colorScheme="primary"
           onClick={() => {
             console.log({ activeStep });
-            if (activeStep < steps.length) {
+            if (activeStep < stepperSteps.length) {
               setActiveStep(activeStep + 1);
-              const newProgressValue = (activeStep + 1) * (100 / steps.length);
+              const newProgressValue =
+                (activeStep + 1) * (100 / stepperSteps.length);
               console.log({ newProgressValue });
               setProgressValue(newProgressValue);
               if (newProgressValue === 100) {
