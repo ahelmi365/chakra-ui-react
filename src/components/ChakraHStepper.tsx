@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import ChakraAlert from "./ChakraAlert";
+import { stepperContentData } from "../utils/constants";
 
 const steps = [
   { title: "First", description: "Contact Info" },
@@ -42,7 +43,7 @@ const ChakraHStepper = () => {
       <Stepper index={activeStep} orientation="horizontal" overflow={"auto"}>
         {steps.map((step, index) => (
           <Step key={index} onClick={() => setActiveStep(index)}>
-            <StepIndicator>
+            <StepIndicator fontWeight={"bold"}>
               <StepStatus
                 complete={<StepIcon />}
                 incomplete={<StepNumber />}
@@ -64,31 +65,16 @@ const ChakraHStepper = () => {
 
       <Stack spacing={8}>
         <Box>
-          {activeStep === 0 && (
+          <ChakraAlert status={activeStep === 4 ? "success" : "info"}>
             <Stack>
-              <ChakraAlert status="info">Step 1 content</ChakraAlert>
+              <Heading size={"md"}>
+                {stepperContentData[activeStep].title}
+              </Heading>
+              <Text>{stepperContentData[activeStep].content}</Text>
+              <Text>{stepperContentData[activeStep].content}</Text>
             </Stack>
-          )}
-          {activeStep === 1 && (
-            <Stack>
-              <ChakraAlert status="info">Step 2 content</ChakraAlert>
-            </Stack>
-          )}
-          {activeStep === 2 && (
-            <Stack>
-              <ChakraAlert status="info">Step 3 content</ChakraAlert>
-            </Stack>
-          )}
-          {activeStep === 3 && (
-            <Stack>
-              <ChakraAlert status="info">Step 4 content</ChakraAlert>
-            </Stack>
-          )}
-          {activeStep === 4 && (
-            <Stack>
-              <ChakraAlert status="success">Done! 🎉</ChakraAlert>
-            </Stack>
-          )}
+          </ChakraAlert>
+
           <Progress
             hasStripe={progressValue < 100}
             size={"sm"}

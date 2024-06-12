@@ -20,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ChakraAlert from "./ChakraAlert";
+import { stepperContentData } from "../utils/constants";
 
 const steps = [
   { title: "First", description: "Contact Info" },
@@ -38,11 +39,11 @@ const ChakraVStepper = () => {
   return (
     <Stack gap={4}>
       <Heading size="md">Vertical Stepper</Heading>
-      <HStack alignItems={"stretch"}>
+      <HStack alignItems={"stretch"} spacing={16}>
         <Stepper index={activeStep} orientation="vertical" height={480} gap="0">
           {steps.map((step, index) => (
             <Step key={index} onClick={() => setActiveStep(index)}>
-              <StepIndicator>
+              <StepIndicator fontWeight={"bold"}>
                 <StepStatus
                   complete={<StepIcon />}
                   incomplete={<StepNumber />}
@@ -63,32 +64,17 @@ const ChakraVStepper = () => {
           ))}
         </Stepper>
 
-        <Box w={"80%"} h={"100%"} flex={1}>
-          {activeStep === 0 && (
+        <Box w={"80%"} h={"100%"} flex={1} alignSelf={"start"}>
+          <ChakraAlert status={activeStep === 4 ? "success" : "info"}>
             <Stack>
-              <ChakraAlert status="info">Step 1 content</ChakraAlert>
+              <Heading size={"md"}>
+                {stepperContentData[activeStep].title}
+              </Heading>
+              <Text>{stepperContentData[activeStep].content}</Text>
+              <Text>{stepperContentData[activeStep].content}</Text>
             </Stack>
-          )}
-          {activeStep === 1 && (
-            <Stack>
-              <ChakraAlert status="info">Step 2 content</ChakraAlert>
-            </Stack>
-          )}
-          {activeStep === 2 && (
-            <Stack>
-              <ChakraAlert status="info">Step 3 content</ChakraAlert>
-            </Stack>
-          )}
-          {activeStep === 3 && (
-            <Stack>
-              <ChakraAlert status="info">Step 4 content</ChakraAlert>
-            </Stack>
-          )}
-          {activeStep === 4 && (
-            <Stack>
-              <ChakraAlert status="success">Done! 🎉</ChakraAlert>
-            </Stack>
-          )}
+          </ChakraAlert>
+
           <Progress
             hasStripe={progressValue < 100}
             size={"sm"}
