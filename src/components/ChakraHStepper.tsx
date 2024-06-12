@@ -71,7 +71,6 @@ const ChakraHStepper = () => {
                 {stepperContentData[activeStep].title}
               </Heading>
               <Text>{stepperContentData[activeStep].content}</Text>
-              <Text>{stepperContentData[activeStep].content}</Text>
             </Stack>
           </ChakraAlert>
 
