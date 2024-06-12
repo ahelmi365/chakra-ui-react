@@ -17,7 +17,7 @@ import {
   Text,
   useSteps,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ChakraAlert from "./ChakraAlert";
 
 const steps = [
@@ -31,6 +31,8 @@ const ChakraHStepper = () => {
     index: 0,
     count: steps.length,
   });
+  const [progressValue, setProgressValue] = useState(0);
+  const [progressColorScheme, setProgressColorScheme] = useState("blue");
   useEffect(() => {
     console.log("Stepper");
   }, []);
@@ -65,72 +67,49 @@ const ChakraHStepper = () => {
           {activeStep === 0 && (
             <Stack>
               <ChakraAlert status="info">Step 1 content</ChakraAlert>
-              <Progress
-                hasStripe
-                size={"sm"}
-                rounded={8}
-                colorScheme="blue"
-                value={10}
-              />
             </Stack>
           )}
           {activeStep === 1 && (
             <Stack>
               <ChakraAlert status="info">Step 2 content</ChakraAlert>
-              <Progress
-                hasStripe
-                size={"sm"}
-                rounded={8}
-                colorScheme="blue"
-                value={25}
-              />
             </Stack>
           )}
           {activeStep === 2 && (
             <Stack>
               <ChakraAlert status="info">Step 3 content</ChakraAlert>
-              <Progress
-                hasStripe
-                size={"sm"}
-                rounded={8}
-                colorScheme="blue"
-                value={50}
-              />
             </Stack>
           )}
           {activeStep === 3 && (
             <Stack>
               <ChakraAlert status="info">Step 4 content</ChakraAlert>
-              <Progress
-                hasStripe
-                size={"sm"}
-                rounded={8}
-                colorScheme="blue"
-                value={75}
-              />
             </Stack>
           )}
           {activeStep === 4 && (
             <Stack>
               <ChakraAlert status="success">Done! 🎉</ChakraAlert>
-              <Progress
-                // hasStripe
-                size={"sm"}
-                rounded={8}
-                colorScheme="green"
-                value={100}
-              />
             </Stack>
           )}
+          <Progress
+            hasStripe
+            size={"sm"}
+            rounded={8}
+            colorScheme={progressColorScheme}
+            value={progressValue}
+            mt={2}
+          />
         </Box>
+        {/* btns */}
         <Flex gap={4}>
           <Button
             w={32}
             colorScheme="primary"
             variant={"outline"}
             onClick={() => {
+              console.log({ activeStep });
               if (activeStep > 0) {
                 setActiveStep(activeStep - 1);
+                console.log((activeStep - 1) * (100 / steps.length));
+                setProgressValue((activeStep - 1) * (100 / steps.length));
               }
             }}
           >
@@ -140,8 +119,11 @@ const ChakraHStepper = () => {
             w={32}
             colorScheme="primary"
             onClick={() => {
+              console.log({ activeStep });
               if (activeStep < 4) {
                 setActiveStep(activeStep + 1);
+                console.log((activeStep + 1) * (100 / steps.length));
+                setProgressValue((activeStep + 1) * (100 / steps.length));
               }
             }}
           >
