@@ -1,9 +1,6 @@
 import {
-  Box,
   Card,
   CardBody,
-  Stack,
-  StackDivider,
   Tab,
   TabList,
   TabPanel,
@@ -43,6 +40,21 @@ const tabsData = [
     isDisabled: false,
   },
   {
+    label: "Tooltip",
+    content: <ChakraTooltip />,
+    isDisabled: false,
+  },
+  {
+    label: "H-Stepper",
+    content: <ChakraHStepper />,
+    isDisabled: false,
+  },
+  {
+    label: "V-Stepper",
+    content: <ChakraVStepper />,
+    isDisabled: false,
+  },
+  {
     label: "Modals",
     content: <ChakraModal />,
     isDisabled: false,
@@ -50,25 +62,6 @@ const tabsData = [
   {
     label: "Drawer",
     content: <ChakraDrawer />,
-    isDisabled: false,
-  },
-  {
-    label: "Tooltip",
-    content: <ChakraTooltip />,
-    isDisabled: false,
-  },
-  {
-    label: "Stepper",
-    content: (
-      <Stack gap={8} divider={<StackDivider />}>
-        <Box>
-          <ChakraHStepper />
-        </Box>
-        <Box>
-          <ChakraVStepper />
-        </Box>
-      </Stack>
-    ),
     isDisabled: false,
   },
   {
