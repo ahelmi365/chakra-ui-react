@@ -3,6 +3,7 @@ import {
   Card,
   CardBody,
   Stack,
+  StackDivider,
   Tab,
   TabList,
   TabPanel,
@@ -64,11 +65,11 @@ const tabsData = [
   {
     label: "Stepper",
     content: (
-      <Stack gap={8}>
+      <Stack gap={8} divider={<StackDivider />}>
         <Box>
           <ChakraHStepper />
         </Box>
-        <Box alignSelf={"center"}>
+        <Box>
           <ChakraVStepper />
         </Box>
       </Stack>
