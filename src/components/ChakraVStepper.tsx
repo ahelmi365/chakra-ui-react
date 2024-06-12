@@ -106,6 +106,7 @@ const ChakraVStepper = () => {
           colorScheme="primary"
           variant={"outline"}
           onClick={() => {
+            setProgressColorScheme("blue");
             console.log({ activeStep });
             if (activeStep > 0) {
               setActiveStep(activeStep - 1);

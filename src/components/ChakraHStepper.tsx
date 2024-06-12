@@ -120,6 +120,7 @@ const ChakraHStepper = () => {
             colorScheme="primary"
             onClick={() => {
               console.log({ activeStep });
+              setProgressColorScheme("blue");
               if (activeStep < 4) {
                 setActiveStep(activeStep + 1);
                 console.log((activeStep + 1) * (100 / steps.length));
