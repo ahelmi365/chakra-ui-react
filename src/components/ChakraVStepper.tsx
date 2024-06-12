@@ -65,13 +65,15 @@ const ChakraVStepper = () => {
         </Stepper>
 
         <Box w={"80%"} h={"100%"} flex={1} alignSelf={"start"}>
-          <ChakraAlert status={activeStep === 4 ? "success" : "info"}>
+          <ChakraAlert
+            status={activeStep === steps.length ? "success" : "info"}
+          >
             <Stack>
               <Heading size={"md"}>
-                {stepperContentData[activeStep].title}
+                {stepperContentData[activeStep]?.title}
               </Heading>
-              <Text>{stepperContentData[activeStep].content}</Text>
-              <Text>{stepperContentData[activeStep].content}</Text>
+              <Text>{stepperContentData[activeStep]?.content}</Text>
+              <Text>{stepperContentData[activeStep]?.content}</Text>
             </Stack>
           </ChakraAlert>
 
@@ -108,7 +110,7 @@ const ChakraVStepper = () => {
           colorScheme="primary"
           onClick={() => {
             console.log({ activeStep });
-            if (activeStep < 4) {
+            if (activeStep < steps.length) {
               setActiveStep(activeStep + 1);
               const newProgressValue = (activeStep + 1) * (100 / steps.length);
               console.log({ newProgressValue });

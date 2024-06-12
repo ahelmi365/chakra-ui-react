@@ -65,12 +65,14 @@ const ChakraHStepper = () => {
 
       <Stack spacing={8}>
         <Box>
-          <ChakraAlert status={activeStep === 4 ? "success" : "info"}>
+          <ChakraAlert
+            status={activeStep === steps.length ? "success" : "info"}
+          >
             <Stack>
               <Heading size={"md"}>
-                {stepperContentData[activeStep].title}
+                {stepperContentData[activeStep]?.title}
               </Heading>
-              <Text>{stepperContentData[activeStep].content}</Text>
+              <Text>{stepperContentData[activeStep]?.content}</Text>
             </Stack>
           </ChakraAlert>
 
@@ -106,7 +108,7 @@ const ChakraHStepper = () => {
             colorScheme="primary"
             onClick={() => {
               console.log({ activeStep });
-              if (activeStep < 4) {
+              if (activeStep < steps.length) {
                 setActiveStep(activeStep + 1);
                 const newProgressValue =
                   (activeStep + 1) * (100 / steps.length);
