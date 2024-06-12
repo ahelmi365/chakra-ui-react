@@ -31,7 +31,7 @@ const ChakraVStepper = () => {
   const [progressValue, setProgressValue] = useState(0);
   const [progressColorScheme, setProgressColorScheme] = useState("blue");
   return (
-    <Stack gap={4}>
+    <Stack gap={8}>
       <Heading size="md">Vertical Stepper</Heading>
       <HStack alignItems={"stretch"} spacing={16}>
         <Stepper index={activeStep} orientation="vertical" height={480} gap="0">
