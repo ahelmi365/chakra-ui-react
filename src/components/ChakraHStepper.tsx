@@ -14,6 +14,7 @@ import {
   StepStatus,
   StepTitle,
   Stepper,
+  Text,
   useSteps,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
@@ -34,7 +35,7 @@ const ChakraHStepper = () => {
     console.log("Stepper");
   }, []);
   return (
-    <Stack gap={4}>
+    <Stack gap={8}>
       <Heading size="md">Horizontal Stepper</Heading>
       <Stepper index={activeStep} orientation="horizontal" overflow={"auto"}>
         {steps.map((step, index) => (
@@ -48,7 +49,9 @@ const ChakraHStepper = () => {
             </StepIndicator>
 
             <Box flexShrink="0" cursor={"pointer"}>
-              <StepTitle>{step.title}</StepTitle>
+              <StepTitle>
+                <Text fontWeight={"bold"}>{step.title}</Text>
+              </StepTitle>
               <StepDescription>{step.description}</StepDescription>
             </Box>
 
@@ -57,7 +60,7 @@ const ChakraHStepper = () => {
         ))}
       </Stepper>
 
-      <Stack spacing={4}>
+      <Stack spacing={8}>
         <Box>
           {activeStep === 0 && (
             <Stack>
@@ -66,7 +69,7 @@ const ChakraHStepper = () => {
                 hasStripe
                 size={"sm"}
                 rounded={8}
-                colorScheme="primary"
+                colorScheme="blue"
                 value={10}
               />
             </Stack>
@@ -78,7 +81,7 @@ const ChakraHStepper = () => {
                 hasStripe
                 size={"sm"}
                 rounded={8}
-                colorScheme="primary"
+                colorScheme="blue"
                 value={25}
               />
             </Stack>
@@ -90,7 +93,7 @@ const ChakraHStepper = () => {
                 hasStripe
                 size={"sm"}
                 rounded={8}
-                colorScheme="primary"
+                colorScheme="blue"
                 value={50}
               />
             </Stack>
@@ -102,19 +105,19 @@ const ChakraHStepper = () => {
                 hasStripe
                 size={"sm"}
                 rounded={8}
-                colorScheme="primary"
+                colorScheme="blue"
                 value={75}
               />
             </Stack>
           )}
           {activeStep === 4 && (
             <Stack>
-              <ChakraAlert status="success">Done!</ChakraAlert>
+              <ChakraAlert status="success">Done! 🎉</ChakraAlert>
               <Progress
                 // hasStripe
                 size={"sm"}
                 rounded={8}
-                colorScheme="primary"
+                colorScheme="green"
                 value={100}
               />
             </Stack>
