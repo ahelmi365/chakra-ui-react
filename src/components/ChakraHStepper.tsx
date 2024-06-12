@@ -90,7 +90,7 @@ const ChakraHStepper = () => {
             </Stack>
           )}
           <Progress
-            hasStripe
+            hasStripe={progressValue < 100}
             size={"sm"}
             rounded={8}
             colorScheme={progressColorScheme}
