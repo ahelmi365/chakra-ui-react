@@ -18,7 +18,7 @@ import {
   Text,
   useSteps,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChakraAlert from "./ChakraAlert";
 import { stepperContentData, stepperSteps } from "../utils/constants";
 
@@ -30,6 +30,10 @@ const ChakraVStepper = () => {
 
   const [progressValue, setProgressValue] = useState(0);
   const [progressColorScheme, setProgressColorScheme] = useState("blue");
+
+  useEffect(() => {
+    console.log("V-Stepper");
+  }, []);
   return (
     <Stack gap={8}>
       <Heading size="md">Vertical Stepper</Heading>

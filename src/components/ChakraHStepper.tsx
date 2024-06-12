@@ -29,7 +29,7 @@ const ChakraHStepper = () => {
   const [progressValue, setProgressValue] = useState(0);
   const [progressColorScheme, setProgressColorScheme] = useState("blue");
   useEffect(() => {
-    console.log("Stepper");
+    console.log("H-Stepper");
   }, []);
   return (
     <Stack gap={8}>
