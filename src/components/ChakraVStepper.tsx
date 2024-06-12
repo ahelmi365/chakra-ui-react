@@ -34,7 +34,7 @@ const ChakraVStepper = () => {
     <Stack gap={8}>
       <Heading size="md">Vertical Stepper</Heading>
       <HStack alignItems={"stretch"} spacing={16}>
-        <Stepper index={activeStep} orientation="vertical" height={480} gap="0">
+        <Stepper index={activeStep} orientation="vertical" height={380} gap="0">
           {stepperSteps.map((step, index) => (
             <Step key={index} onClick={() => setActiveStep(index)}>
               <StepIndicator fontWeight={"bold"}>
