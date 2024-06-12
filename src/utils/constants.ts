@@ -1,3 +1,9 @@
+export const stepperSteps = [
+  { title: "First", description: "Contact Info" },
+  { title: "Second", description: "Date & Time" },
+  { title: "Third", description: "Select Rooms" },
+  { title: "Fourth", description: "Check Out" },
+];
 export const stepperContentData = [
   {
     id: 0,
