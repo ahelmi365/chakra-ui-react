@@ -8,7 +8,7 @@ const ChakraAlert = ({ status, children }: Props) => {
   return (
     <Alert status={status} rounded={8}>
       <AlertIcon />
-      <Box fontWeight={"bold"} p={2} fontSize={"large"}>
+      <Box p={2} fontSize={"large"}>
         {children}
       </Box>
     </Alert>
