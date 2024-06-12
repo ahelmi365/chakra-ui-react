@@ -105,6 +105,7 @@ const ChakraHStepper = () => {
             colorScheme="primary"
             variant={"outline"}
             onClick={() => {
+              setProgressColorScheme("blue");
               console.log({ activeStep });
               if (activeStep > 0) {
                 setActiveStep(activeStep - 1);
@@ -120,11 +121,15 @@ const ChakraHStepper = () => {
             colorScheme="primary"
             onClick={() => {
               console.log({ activeStep });
-              setProgressColorScheme("blue");
               if (activeStep < 4) {
                 setActiveStep(activeStep + 1);
-                console.log((activeStep + 1) * (100 / steps.length));
-                setProgressValue((activeStep + 1) * (100 / steps.length));
+                const newProgressValue =
+                  (activeStep + 1) * (100 / steps.length);
+                console.log({ newProgressValue });
+                setProgressValue(newProgressValue);
+                if (newProgressValue === 100) {
+                  setProgressColorScheme("green");
+                }
               }
             }}
           >
