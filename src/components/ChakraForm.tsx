@@ -22,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
 import { useEffect, useState } from "react";
+import OTP from "./OTP";
 
 const ChakraForm = () => {
   const [value, setValue] = useState("1");
@@ -113,76 +114,77 @@ const ChakraForm = () => {
           <Heading fontSize={"large"} mb={"1rem"}>
             Integration with Formik
           </Heading>
-          <Box rounded="md">
-            <Formik
-              initialValues={{
-                email: "",
-                password: "",
-                rememberMe: false,
-              }}
-              onSubmit={(values) => {
-                alert(JSON.stringify(values, null, 4));
-              }}
-            >
-              {({ handleSubmit, errors, touched }) => (
-                <form onSubmit={handleSubmit}>
-                  <VStack spacing={4} align="flex-start">
-                    <FormControl>
-                      <FormLabel htmlFor="email">Email Address</FormLabel>
-                      <Field
-                        as={Input}
-                        id="email"
-                        name="email"
-                        type="email"
-                        variant="outline"
-                      />
-                    </FormControl>
-                    <FormControl
-                      isInvalid={!!errors.password && touched.password}
-                    >
-                      <FormLabel htmlFor="password">Password</FormLabel>
-                      <Field
-                        as={Input}
-                        id="password"
-                        name="password"
-                        type="password"
-                        variant="outline"
-                        validate={(value: string) => {
-                          let error;
+          <Stack gap={4} divider={<StackDivider />}>
+            <Box rounded="md">
+              <Formik
+                initialValues={{
+                  email: "",
+                  password: "",
+                  rememberMe: false,
+                }}
+                onSubmit={(values) => {
+                  alert(JSON.stringify(values, null, 4));
+                }}
+              >
+                {({ handleSubmit, errors, touched }) => (
+                  <form onSubmit={handleSubmit}>
+                    <VStack spacing={4} align="flex-start">
+                      <FormControl>
+                        <FormLabel htmlFor="email">Email Address</FormLabel>
+                        <Field
+                          as={Input}
+                          id="email"
+                          name="email"
+                          type="email"
+                          variant="outline"
+                        />
+                      </FormControl>
+                      <FormControl
+                        isInvalid={!!errors.password && touched.password}
+                      >
+                        <FormLabel htmlFor="password">Password</FormLabel>
+                        <Field
+                          as={Input}
+                          id="password"
+                          name="password"
+                          type="password"
+                          variant="outline"
+                          validate={(value: string) => {
+                            let error;
 
-                          if (value.length < 6) {
-                            error =
-                              "Password must contain at least 6 characters";
-                          } else if (value.length > 10) {
-                            error =
-                              "Password must contain at most 10 characters";
-                          }
+                            if (value.length < 6) {
+                              error =
+                                "Password must contain at least 6 characters";
+                            } else if (value.length > 10) {
+                              error =
+                                "Password must contain at most 10 characters";
+                            }
 
-                          return error;
-                        }}
-                      />
-                      <FormErrorMessage>{errors.password}</FormErrorMessage>
-                    </FormControl>
-                    <Field
-                      as={Checkbox}
-                      id="rememberMe"
-                      name="rememberMe"
-                      colorScheme="primary"
-                    >
-                      Remember me?
-                    </Field>
-                    <Button
-                      type="submit"
-                      colorScheme="primary"
-                      width="fit-content"
-                    >
-                      Login
-                    </Button>
-                  </VStack>
-                </form>
-              )}
-            </Formik>
-          </Box>
+                            return error;
+                          }}
+                        />
+                        <FormErrorMessage>{errors.password}</FormErrorMessage>
+                      </FormControl>
+                      <Field
+                        as={Checkbox}
+                        id="rememberMe"
+                        name="rememberMe"
+                        colorScheme="primary"
+                      >
+                        Remember me?
+                      </Field>
+                      <Button type="submit" colorScheme="primary" width={32}>
+                        Login
+                      </Button>
+                    </VStack>
+                  </form>
+                )}
+              </Formik>
+            </Box>
+            <Box>
+              <OTP />
+            </Box>
+          </Stack>
         </Box>
       </Stack>
     </Stack>

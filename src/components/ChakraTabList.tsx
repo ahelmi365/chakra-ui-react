@@ -18,13 +18,12 @@ import ChakraDrawer from "./ChakraDrawer";
 import ChakraForm from "./ChakraForm";
 import ChakraHStepper from "./ChakraHStepper";
 import ChakraModal from "./ChakraModal";
+import ChakraSkeleton from "./ChakraSkeleton";
 import ChakraTooltip from "./ChakraTooltip";
 import ChakraVStepper from "./ChakraVStepper";
-import OTP from "./OTP";
 import ResponsiveStyle from "./ResponsiveStyle";
 import Stacks from "./Stacks";
 import ChakraToast from "./Toast";
-import ChakraSkeleton from "./ChakraSkeleton";
 
 const tabsData = [
   {
@@ -37,11 +36,7 @@ const tabsData = [
     content: <ChakraForm />,
     isDisabled: false,
   },
-  {
-    label: "OTP",
-    content: <OTP />,
-    isDisabled: false,
-  },
+
   {
     label: "Toast",
     content: <ChakraToast />,

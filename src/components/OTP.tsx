@@ -24,7 +24,7 @@ const OTP = () => {
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <Stack gap={4}>
-        <Heading size="md">OTP</Heading>
+        <Heading fontSize={"large"}>OTP</Heading>
         <HStack>
           <PinInput
             size="lg"
@@ -44,7 +44,7 @@ const OTP = () => {
         </HStack>
         <Button
           colorScheme="primary"
-          w={"fit-content"}
+          w={32}
           type="submit"
           isDisabled={OTP.length < 4}
         >
