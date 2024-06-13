@@ -1,5 +1,5 @@
 const LeftSideNav = () => {
-  return <div>LeftSideNav</div>;
+  return <>LeftSideNav</>;
 };
 
 export default LeftSideNav;

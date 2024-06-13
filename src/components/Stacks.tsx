@@ -14,7 +14,7 @@ const Stacks = () => {
     console.log("Stacks");
   }, []);
   return (
-    <div>
+    <>
       <Box as="section" mt={5} mb={5}>
         <Heading fontSize={"1.25rem"} mb="0.5rem">
           Stack, VStack, HStack
@@ -67,7 +67,7 @@ const Stacks = () => {
           </Box>
         </Stack>
       </Box>
-    </div>
+    </>
   );
 };
 
