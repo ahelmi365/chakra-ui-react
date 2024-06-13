@@ -36,7 +36,7 @@ const ChakraHStepper = () => {
       <Heading size="md">Horizontal Stepper</Heading>
       <Stepper index={activeStep} orientation="horizontal" overflow={"auto"}>
         {stepperSteps.map((step, index) => (
-          <Step key={index} onClick={() => setActiveStep(index)}>
+          <Step key={index}>
             <StepIndicator fontWeight={"bold"}>
               <StepStatus
                 complete={<StepIcon />}
@@ -45,7 +45,7 @@ const ChakraHStepper = () => {
               />
             </StepIndicator>
 
-            <Box flexShrink="0" cursor={"pointer"}>
+            <Box flexShrink="0">
               <StepTitle>
                 <Text fontWeight={"bold"}>{step.title}</Text>
               </StepTitle>
