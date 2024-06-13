@@ -21,6 +21,7 @@ import ChakraVStepper from "./ChakraVStepper";
 import ResponsiveStyle from "./ResponsiveStyle";
 import Stacks from "./Stacks";
 import ChakraToast from "./Toast";
+import ChakraTable from "./ChakraTable";
 
 const tabsData = [
   {
@@ -77,6 +78,11 @@ const tabsData = [
   {
     label: "Accordion",
     content: <ChakraAccordion />,
+    isDisabled: false,
+  },
+  {
+    label: "Table",
+    content: <ChakraTable />,
     isDisabled: false,
   },
   {
