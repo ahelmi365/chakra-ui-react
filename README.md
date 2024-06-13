@@ -11,6 +11,7 @@ Check out the live demo [here](https://ahelmi365.github.io/chakra-ui-react/).
 - [Installation](#installation)
 - [Usage](#usage)
 - [Components](#components)
+
   - [Buttons](#buttons)
   - [Forms](#forms)
   - [Toast](#toast)
@@ -22,12 +23,9 @@ Check out the live demo [here](https://ahelmi365.github.io/chakra-ui-react/).
   - [Breadcrumb](#breadcrumb)
   - [Skeleton](#skeleton)
   - [Accordion](#accordion)
-  - [Grid](#grid)
-  - [Stacks](#stacks)
-  - [Responsive Styles](#responsive-styles)
   - [Progress Bar](#progress-bar)
+
 - [Custom Theme](#custom-theme)
-- [Running the Project](#running-the-project)
 
 ## Installation
 
