@@ -4,7 +4,7 @@ This repository demonstrates various Chakra UI components with examples. The pro
 
 ## Live Demo
 
-Check out the live demo [here](https://ahelmi365.github.io/chakra-ui-react/).
+Check out the live demo <a href="https://ahelmi365.github.io/chakra-ui-react/" target="_blank">here</a>.
 
 ## Table of Contents
 
