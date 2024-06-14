@@ -15,6 +15,7 @@ import {
 import ChakraLogo from "./ChakraLogo";
 import DrawerNavItem from "./DrawerNavItem";
 import { Link } from "react-router-dom";
+import packageJSON from "../../package.json";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
@@ -35,6 +36,8 @@ const profileNavItems = [
   },
 ];
 const LeftDrawer = ({ isOpen, onClose }: Props) => {
+  const versionNumber = packageJSON.version;
+
   return (
     <Drawer isOpen={isOpen} placement="left" size={"xs"} onClose={onClose}>
       <DrawerOverlay />
@@ -75,6 +78,9 @@ const LeftDrawer = ({ isOpen, onClose }: Props) => {
               navigateTo={"/"}
               navItemIcon={ArrowLeftIcon}
             />
+          </Box>
+          <Box ps={"2.5rem"} fontSize={"sm"}>
+            Version {versionNumber}
           </Box>
         </DrawerFooter>
       </DrawerContent>
