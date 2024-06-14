@@ -1,12 +1,17 @@
+import { Suspense, lazy } from "react";
 import { Box } from "@chakra-ui/react";
-import Header from "./Header";
-import Pricing from "./Pricing";
+const Header = lazy(() => import("./Header"));
+const Pricing = lazy(() => import("./Pricing"));
 
 const Landing = () => {
   return (
     <Box>
-      <Header />
-      <Pricing />
+      <Suspense>
+        <Header />
+      </Suspense>
+      <Suspense>
+        <Pricing />
+      </Suspense>
     </Box>
   );
 };

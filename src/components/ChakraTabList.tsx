@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import {
   Card,
   CardBody,
@@ -8,46 +9,76 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 
-import Buttons from "./Buttons";
-import ChakraAccordion from "./ChakraAccordion";
-import ChakraBreadcrumb from "./ChakraBreadcrumb";
-import ChakraDrawer from "./ChakraDrawer";
-import ChakraForm from "./ChakraForm";
-import ChakraHStepper from "./ChakraHStepper";
-import ChakraModal from "./ChakraModal";
-import ChakraSkeleton from "./ChakraSkeleton";
-import ChakraTooltip from "./ChakraTooltip";
-import ChakraVStepper from "./ChakraVStepper";
-import ResponsiveStyle from "./ResponsiveStyle";
-import Stacks from "./Stacks";
-import ChakraToast from "./Toast";
-import ChakraTable from "./ChakraTable";
+const Buttons = lazy(() => import("./Buttons"));
+const ChakraAccordion = lazy(() => import("./ChakraAccordion"));
+const ChakraBreadcrumb = lazy(() => import("./ChakraBreadcrumb"));
+const ChakraDrawer = lazy(() => import("./ChakraDrawer"));
+const ChakraForm = lazy(() => import("./ChakraForm"));
+const ChakraHStepper = lazy(() => import("./ChakraHStepper"));
+const ChakraModal = lazy(() => import("./ChakraModal"));
+const ChakraSkeleton = lazy(() => import("./ChakraSkeleton"));
+const ChakraTooltip = lazy(() => import("./ChakraTooltip"));
+const ChakraVStepper = lazy(() => import("./ChakraVStepper"));
+const ResponsiveStyle = lazy(() => import("./ResponsiveStyle"));
+const Stacks = lazy(() => import("./Stacks"));
+const ChakraToast = lazy(() => import("./Toast"));
+const ChakraTable = lazy(() => import("./ChakraTable"));
 
 const tabsData = [
   {
     label: "Buttons",
-    content: <Buttons />,
+    content: (
+      <>
+        <Suspense>
+          <Buttons />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Forms",
-    content: <ChakraForm />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraForm />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
 
   {
     label: "Toast",
-    content: <ChakraToast />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraToast />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Tooltip",
-    content: <ChakraTooltip />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraTooltip />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "H-Stepper",
-    content: <ChakraHStepper />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraHStepper />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
@@ -57,47 +88,101 @@ const tabsData = [
   },
   {
     label: "Modals",
-    content: <ChakraModal />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraModal />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Drawer",
-    content: <ChakraDrawer />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraDrawer />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Breadcrumb",
-    content: <ChakraBreadcrumb />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraBreadcrumb />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Skeleton",
-    content: <ChakraSkeleton />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraSkeleton />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Accordion",
-    content: <ChakraAccordion />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraAccordion />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Table",
-    content: <ChakraTable />,
+    content: (
+      <>
+        <Suspense>
+          <ChakraTable />
+        </Suspense>
+      </>
+    ),
     isDisabled: false,
   },
   {
     label: "Grid",
-    content: <Stacks />,
+    content: (
+      <>
+        <Suspense>
+          <Stacks />
+        </Suspense>
+      </>
+    ),
     isDisabled: true,
   },
   {
     label: "Stacks",
-    content: <Stacks />,
+    content: (
+      <>
+        <Suspense>
+          <Stacks />
+        </Suspense>
+      </>
+    ),
     isDisabled: true,
   },
   {
     label: "Resposive",
-    content: <ResponsiveStyle />,
+    content: (
+      <>
+        <Suspense>
+          <ResponsiveStyle />
+        </Suspense>
+      </>
+    ),
     isDisabled: true,
   },
 ];
