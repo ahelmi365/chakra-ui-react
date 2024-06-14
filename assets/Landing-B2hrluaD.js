@@ -1,0 +1,2 @@
+const __vite__fileDeps=["assets/Header-Db0lKlrx.js","assets/index-CxsiXPnj.js","assets/index-CPwc1rMr.css","assets/chunk-7OLJDQMT-DoR6ucSf.js","assets/Pricing-CD4v2Xyd.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+import{r,_ as e,j as s,B as t}from"./index-CxsiXPnj.js";const o=r.lazy(()=>e(()=>import("./Header-Db0lKlrx.js"),__vite__mapDeps([0,1,2,3]))),i=r.lazy(()=>e(()=>import("./Pricing-CD4v2Xyd.js"),__vite__mapDeps([4,1,2,3]))),_=()=>s.jsxs(t,{children:[s.jsx(r.Suspense,{children:s.jsx(o,{})}),s.jsx(r.Suspense,{children:s.jsx(i,{})})]});export{_ as default};
